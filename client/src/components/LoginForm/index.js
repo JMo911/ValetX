@@ -26,6 +26,7 @@ class LoginForm extends Component {
             'password': this.state.password
         }).then((response) => {
             this.cookies.set('token', response.data.token);
+            //redirect to home page?
         });
     }
 
