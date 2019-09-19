@@ -5,7 +5,8 @@ export default function (app) {
      app.post('/api/auth', function(request, response) {
         passport.authenticate(
             'local',
-            {session: false},
+            {session: false}, 
+            // { successRedirect: '/guest', failureRedirect: '/login' },
             function(error, user, info) {
                 if (error || !user) {
                     return response.status(403).json({
@@ -37,17 +38,18 @@ export default function (app) {
             }
         )(request, response);
     });
-     app.post('/api/users', (request, response) => {
-         const body = request.body;
-        models.user.create({
-            username: body.username,
-            password: body.password,
-            email: DataTypes.STRING,
-            first_name: DataTypes.STRING,
-            last_name: DataTypes.STRING,
-        }).then(() => {
-            response.send();
-        })
 
-     });
+    app.post('/api/users', (request, response) => {
+        const body = request.body;
+        models.User.create({
+           username: body.username,
+           password: body.password,
+           email: body.email,
+           first_name: body.first_name,
+           last_name: body.last_name
+       }).then((result) => {
+           response.end();
+       })
+
+    });
 }

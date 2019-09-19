@@ -10,6 +10,11 @@ module.exports = function(sequelize, DataTypes) {
             email: DataTypes.STRING,
             first_name: DataTypes.STRING,
             last_name: DataTypes.STRING,
+            parked: DataTypes.BOOLEAN,
+            paid: DataTypes.BOOLEAN,
+            pick_up: DataTypes.BOOLEAN,
+            in_route: DataTypes.BOOLEAN,
+            arrived: DataTypes.BOOLEAN
         },
         {
             hooks: {
