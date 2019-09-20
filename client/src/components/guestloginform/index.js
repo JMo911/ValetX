@@ -17,6 +17,7 @@ class GuestLoginForm extends React.Component {
 
 cookies = new Cookies();
 
+
 // constructor(props) {
 //     super(props);
 // }
@@ -36,8 +37,10 @@ loginSubmit =  async (event) => {
         //redirect to home page?
         // console.log(response);
         //MODAL CLOSE
+        window.location = "/dashboard";
+        // this.toggle;
         // this.props.history.push("/dashboard");
-        // response.redirect('/dashboard');
+        // response.data.redirect('/dashboard');
     }).catch((error) => {
         // Error 😨
         if (error.response) {
@@ -102,7 +105,7 @@ handleChange = (event) => {
         </FormGroup>
 
           <Button className="btn-lg btn-primary guest-login-submit-button" 
-          onClick={this.loginSubmit, this.toggle}
+          onClick={this.loginSubmit}
           >Submit</Button>
 
         </Form>

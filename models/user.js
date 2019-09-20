@@ -27,6 +27,9 @@ module.exports = function(sequelize, DataTypes) {
     );
     User.associate = function(models) {
         // associations can be defined here
+        User.hasMany(models.Car, {
+            onDelete: "cascade"
+          });
     };
 
     User.prototype.validatePassword = function(password) {
