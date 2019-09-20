@@ -29,7 +29,7 @@ class ValetLoginForm extends React.Component {
     switch(fieldName) {
       case 'badgeNumber':
         badgeNumberValid = value.match(/^[0-9]{6,6}$/);
-        fieldValidationErrors.badgeNumber = badgeNumberValid ? '' : ' is 6 numbers';
+        fieldValidationErrors.badgeNumber = badgeNumberValid ? '' : ' needs to be 6 digits';
         break;
       default:
         break;
@@ -52,6 +52,9 @@ class ValetLoginForm extends React.Component {
       event.preventDefault();
     }
   }
+
+
+
     render() {
       return (
 
@@ -66,10 +69,16 @@ class ValetLoginForm extends React.Component {
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
         </div>
-        <Link to="/valet-homepage">
+
+        {/* <Link to="/valet-homepage"> */}
+
           <Button className="btn-lg btn-primary valet-driver-submit-button"
-          disabled={!this.state.formValid}>Submit</Button>
-        </Link>
+          disabled={!this.state.formValid} onClick={this.loginSubmit}>
+            Submit
+          </Button>
+
+        {/* </Link> */}
+
         </Form>
 
       );
@@ -77,3 +86,18 @@ class ValetLoginForm extends React.Component {
   }
 
 export default ValetLoginForm;
+
+/*
+tasks needed for validation if of valet badge id in database:
++ comments out initial linking by successful submit button
+- make a modal (Valet-Wrong-ID) with wrong id message, delay 3 second, 
+then loop back to ValetLoginForm
+- negate the processing of submit button
+- make a component (EvalID) that accept badge-id as incomming props
+- in EvalID component:
+    - do a search of vallet-id: http-get via axios
+        - if exist, then route to /valet-homepage
+        - else, then route to Valet-Wrong-ID
+
+
+*/

@@ -8,13 +8,13 @@ module.exports = async function() {
   await                 // a search for known badge_id of valet tester, 
     db.Valet.findOne({  // if found, flag it with variable "answer"
       where: {          // *notes - at footer
-        badge_id: "0101010101",
+        badge_id: "010101",
         first_name: "John",
         last_name: "Doe"
       }
 
     }).then(testValet => {
-      if(testValet.dataValues.badge_id === "0101010101")
+      if(testValet.dataValues.badge_id === "010101")
         answer = true;
 
     }).catch(error => {
@@ -26,17 +26,17 @@ module.exports = async function() {
   // inserting valets tester badge_id
   db.Valet.bulkCreate([
     {
-      badge_id: "0101010101",
+      badge_id: "010101",
       first_name: "John",
       last_name: "Doe"
     },
     {
-      badge_id: "9876543210",
+      badge_id: "987654",
       first_name: "Josh",
       last_name: "Dahl"
     }, 
     {
-      badge_id: "0123456789",
+      badge_id: "012345",
       first_name: "Jeff",
       last_name: "Del"
     }

@@ -7,9 +7,7 @@ module.exports = function(sequelize, DataTypes) {
             first_name: DataTypes.STRING,
             last_name: DataTypes.STRING,
         },
-      
     );
-
     Valet.sync();
     return Valet;
 };
