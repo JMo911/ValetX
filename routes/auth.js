@@ -38,15 +38,4 @@ export default function (app) {
             }
         )(request, response);
     });
-
-    app.post('/api/users', (request, response) => {
-        const body = request.body;
-        models.User.create({
-           username: body.username,
-           password: body.password,
-           email: body.email,
-           first_name: body.first_name,
-           last_name: body.last_name
-       }).then(() => {response.end();})
-    });
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css'
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
-class GuestRegistrationButton extends React.Component {
+class ValetRegistrationButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,8 +20,8 @@ class GuestRegistrationButton extends React.Component {
       }
     render() {
         return (
-            <div className="center-buttons guest-registration-button-modal">
-                <Button className="btn-lg btn-primary guest-registration-button" onClick={this.toggle}>New Guest?</Button>
+            <div className="center-buttons valet-registration-button-modal">
+                <Button className="btn-lg btn-primary valet-registration-button" onClick={this.toggle}>New Valet?</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                 <ModalHeader toggle={this.toggle}>Create Account</ModalHeader>
                 <ModalBody>
@@ -34,4 +34,4 @@ class GuestRegistrationButton extends React.Component {
 
 }
 
-export default GuestRegistrationButton;
+export default ValetRegistrationButton;
