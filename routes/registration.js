@@ -13,7 +13,7 @@ export default function (app) {
 
     app.post('/api/valets', (request, response) => {
         const body = request.body;
-        models.User.create({
+        models.Valet.create({
            username: body.username,
            password: body.password,
            email: body.email,
