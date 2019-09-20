@@ -1,0 +1,56 @@
+#dashboard-view-paid .status-container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    clear: both;
+}
+
+#dashboard-view-paid .status-number-checkmark {
+    width: 33%;
+    float: left;
+    text-align:center;
+}
+#dashboard-view-paid .number {
+    background-image: url("/images/one.jpg");
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    background: #fff;
+    text-indent: -9999px;
+    color: #d1cdc2;
+    text-align: center;
+    font-size: 32px;
+    margin: 0 auto;
+    line-height: 42px;
+}
+#dashboard-view-paid #parked img {
+    width: 60px;
+    margin:0 auto;
+    display:none;
+}
+#dashboard-view-paid #paid img {
+    width: 60px;
+    margin: 0 auto;
+    display:none;
+}
+#dashboard-view-paid #inroute img {
+    width: 60px;
+    margin: 0 auto;
+    display:block;
+}
+#dashboard-view-paid #parked img.checked {
+    display:block;
+    margin: 0 auto;
+}
+#dashboard-view-paid #paid img.checked {
+    display:block;
+    margin: 0 auto;
+}
+#dashboard-view-paid #inroute img.checked {
+    display:none;
+    margin: 0 auto;
+}
+#dashboard-view-paid span.status-text {
+    color: #c5bfb3;
+}

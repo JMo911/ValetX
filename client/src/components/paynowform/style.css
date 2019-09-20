@@ -1,0 +1,56 @@
+
+.pay-now-button.btn {
+    display:block;
+    margin: 30px auto;
+    width: 150px;
+}
+.add-new-button.btn {
+    display:block;
+    margin: 30px auto;
+    width: 150px;
+}
+
+.add-new-submit-button.btn {
+    display:block;
+    margin: 0 auto 20px auto;
+    width: 150px;
+}
+
+.pay-now-button {
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+    margin: 10px auto 30px auto;
+}
+.pay-now-button:hover {
+    color: #404040;
+    background-color: #e4c670;
+    border:none;
+}
+.add-new-button {
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+    margin: 30px auto;
+}
+.add-new-button:hover {
+    color: #404040;
+    background-color: #e4c670;
+    border:none;
+}
+.add-new-submit-button {
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+    margin: 30px auto;
+}
+.add-new-submit-button:hover {
+    color: #404040;
+    background-color: #e4c670;
+    border:none;
+}
+.pay-now-text {
+    width:100%;
+    margin: 20px auto 10px auto;
+    text-align:center;
+}

@@ -1,0 +1,35 @@
+.arrived-modal {
+    margin: 0 auto;
+    text-align: center;
+}
+p:first-child {
+    font-size: 2em;
+    line-height: 1.2em;
+    margin: 0 auto 30px auto;
+}
+p.thank-you {
+    color: grey;
+    font-style:italic;
+}
+p.how {
+    color: grey;
+    margin: 50px auto 10px auto;
+}
+
+.smile-container {
+    width: 30%;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    clear: both;
+}
+
+.smile {
+    width: 50%;
+    float: left;
+    text-align:center;
+}
+.smile img {
+    width: 60px;
+    margin:0;
+    padding:0;
+}

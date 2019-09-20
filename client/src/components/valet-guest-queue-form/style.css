@@ -1,0 +1,80 @@
+.guest-queue-container {
+    padding: 100px 30px 0 30px;
+    margin-bottom: 30px;
+    
+}
+.guest-queue-table {
+    overflow: hidden;
+    display: inline-block;
+    overflow-y: hidden;
+    font-size: 0.55em;
+}
+.guest-queue-container table {
+    display: block;
+    margin-bottom:0;
+}
+.guest-queue-container table thead th {
+    padding: 10px 15px;
+    font-size: 0.9em;
+}
+tbody {
+    overflow-y: scroll;
+    height: 200px;
+    display:block;
+}
+th, td {
+    text-align:center;
+}
+td {
+    font-size: 1.07em;
+}
+#pickup-guest {
+    background-color: #ace1f7;
+}
+.buttons {
+    width: 140px;
+    margin: 0 auto;
+}
+#valet-home-button {
+    margin-bottom: 5px;
+}
+.btn-secondary {
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+}
+
+.btn-secondary:hover {
+    color: #404040;
+    background-color: #e4c670;
+    border:none;
+}
+
+@media only screen and (min-width: 350px) {
+    .guest-queue-table {
+        font-size: 0.75em;
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    .guest-queue-table {
+        font-size: 0.85em;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    .guest-queue-table {
+        font-size: 1em;
+    }
+    .buttons {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #valet-home-button {
+        margin: 0 10px;
+    }
+    #inroute-button {
+        margin: 0 10px;
+    }
+}
+

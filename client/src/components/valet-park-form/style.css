@@ -1,0 +1,63 @@
+#valet-park-form {
+    padding-top: 100px;
+}
+
+#valet-park-form form {
+    width:90%;
+    margin:0 auto;
+}
+
+#valet-park-form .width45 {
+    width: 45%;
+    float:left;
+}
+#valet-park-from label {
+    margin-bottom: 0 !important;
+}
+#valet-park-from input {
+    margin-bottom: 5px;
+}
+.form-group {
+    margin-bottom: 10px !important;
+}
+#valet-park-form .float-left {
+    float:left;
+}
+#valet-park-form .float-right {
+    float:right;
+}
+.full-width{
+    width:100%;
+    clear:both;
+    margin-bottom: 20px;
+}
+#valet-park-form #parked-button {
+    margin-left: 25%;
+}
+
+#valet-park-form .btn-secondary {
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+}
+
+#valet-park-form .btn-secondary:hover {
+    color: #404040;
+    background-color: #e4c670;
+    border:none;
+}
+textarea {
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 400px) {
+    #valet-park-form #parked-button {
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (min-width: 550px) {
+    #valet-park-form .full-width{
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,19 @@
+.global-submit-button.center-buttons {
+    width:120px;
+    margin: 0 auto;
+}
+.global-submit-button.btn {
+    display:block;
+    margin: 30px auto;
+}
+
+.global-submit-button.btn-primary {
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+}
+.global-submit-button.btn-primary:hover {
+    color: #404040;
+    background-color: #e4c670;
+    border:none;
+}

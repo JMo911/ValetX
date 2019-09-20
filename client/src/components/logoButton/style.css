@@ -1,0 +1,16 @@
+#logo-button {
+    color: #000000;
+    background-color: transparent;
+    border:none;
+    width: 100px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0;
+    top: -20px;
+}
+
+img {
+    width:100px;
+}

@@ -1,0 +1,12 @@
+.viewLogin {
+    width:100%;
+    margin-top:50px;
+}
+.btn-secondary:focus,
+.btn-primary:focus,
+.btn-focus {
+    box-shadow: none;
+}
+a:hover {
+    text-decoration: none;
+}

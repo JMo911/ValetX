@@ -1,0 +1,55 @@
+#dashboard-view-parked {
+    padding-top: 100px;
+}
+button.StripeCheckout {
+    display: block !important;
+    background: none !important;
+    overflow: hidden !important;
+    color: #404040 !important;
+    background-color: #f6de96 !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 1.25rem !important;
+    line-height: 1.5 !important;
+    background-image: none !important;
+    font-family: 'Roboto', sans-serif !important;
+    width: 150px !important;
+    border-radius: .3rem !important;
+    font-weight: normal !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    visibility: visible !important;
+    user-select: none !important;
+    margin: 30px auto !important;
+    box-shadow: none !important;
+}
+
+.StripeCheckout span {
+    background-image: none !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    border-radius: .3rem !important;
+    position: relative !important;
+    display: block !important;
+    color: #404040 !important;
+    background-color: #f6de96  !important;
+    width: 150px !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    font-weight: normal !important;
+    box-shadow: none !important;
+    font-size: 1.25rem !important;
+    text-shadow:none !important;
+    padding:none !important;
+}
+
+button.StripeCheckout:hover {
+    color: #404040 !important;
+    background-color: #e4c670 !important;
+    border: none !important;
+}
+
+button.StripeCheckout span:hover {
+    color: #404040 !important;
+    background-color: #e4c670 !important;
+    border: none !important;
+}

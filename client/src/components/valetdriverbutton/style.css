@@ -1,0 +1,30 @@
+.center-buttons {
+    width:200px;
+    margin: 0 auto;
+}
+.valet-driver-button.btn,
+.valet-driver-submit-button.btn{
+    display:block;
+    margin: 0 auto;
+}
+
+.valet-driver-button.btn-primary {
+    color: #404040;
+    background-color: #e8e4db;
+    border:none;
+}
+.valet-driver-button.btn-primary:hover {
+    color: #404040;
+    background-color: #d1cdc2;
+    border:none;
+}
+.valet-driver-submit-button.btn-primary {
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+}
+.valet-driver-submit-button.btn-primary:hover {
+    color: #404040;
+    background-color: #e4c670;
+    border:none;
+}

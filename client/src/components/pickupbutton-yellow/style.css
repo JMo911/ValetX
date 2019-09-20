@@ -1,0 +1,28 @@
+.center-buttons {
+    margin: 0 auto;
+}
+.pickup-button.btn {
+    display:block;
+    margin: 30px auto;
+    width: 150px;
+}
+
+.pickup-button.btn-primary {
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+}
+.pickup-button.btn-primary:hover {
+    color: #404040;
+    background-color: #e4c670;
+    border:none;
+}
+
+.btn.disabled {
+    opacity: 1;
+    color: #404040;
+    background-color:#e8e4db;
+}
+.btn.disabled:hover {
+    background-color:#e8e4db;
+}

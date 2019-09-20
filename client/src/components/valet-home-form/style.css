@@ -1,0 +1,40 @@
+#valet-home-form{
+    padding-top: 90px;
+}
+
+#valet-home-form form {
+    padding: 0 30px;
+}
+#valet-home-form .btn-secondary {
+    width: 140px;
+    margin: 0 0 5px 15%;
+    color: #404040;
+    background-color: #f6de96;
+    border:none;
+}
+#valet-home-form .btn-secondary:hover {
+    background-color: #e4c670;
+}
+#valet-home-form .btn.disabled {
+    color: #404040;
+    background-color: #e8e4db;
+    cursor: none;
+}
+
+#valet-home-form .btn.disabled:hover {
+    color: #404040;
+    background-color: #e8e4db;
+    cursor: default;
+}
+
+@media only screen and (min-width: 350px) {
+    #valet-home-form .btn-secondary {
+        margin: 0 0 5px 25%;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    #valet-home-form .btn-secondary {
+        margin: 0 15px;
+    }
+}

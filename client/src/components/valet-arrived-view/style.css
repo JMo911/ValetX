@@ -1,0 +1,15 @@
+.valet-arrived-view {
+    text-align:center;
+    width: 75%;
+    margin:50px auto;
+    color: #404040;
+    padding-top: 140px;
+}
+.guestname {
+    font-size: 1.5em !important;
+}
+.message{
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 30px;
+}
