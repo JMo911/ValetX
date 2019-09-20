@@ -1,75 +1,80 @@
 import React from 'react';
 import './style.css';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import { FormErrors } from '../FormErrors';
-import { Link } from "react-router-dom";
+import axios from 'axios';
+import Cookies from 'universal-cookie';
+
 
 class ValetLoginForm extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      badgeNumber: '',
-      formErrors: {badgeNumber: ''},
-      badgeNumberValid: false,
-      formValid: false
-    }
-  }
+  state = {
+    username: '',
+    password: '',
+    error: false,
+    errormessage: ''
+}
 
-  handleUserInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState({[name]: value},
-                  () => { this.validateField(name, value) });
-  }
+cookies = new Cookies();
 
-  validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let badgeNumberValid = this.state.badgeNumberValid;
+valetLogin =  async (event) => {
+    event.preventDefault();
+    this.setState({
+        "username": event.currentTarget.username,
+        "password": event.currentTarget.password
+    });
+    axios.post('/api/valetauth', {
+        'username': this.state.username,
+        'password': this.state.password
+    }).then((response) => {
+        this.cookies.set('token', response.data.token);
+        window.location = "/dashboard";
+    }).catch((error) => {
+        if (error.response) {
+            console.log(error.response.data.info.message);
+            const errormessage = error.response.data.info.message;
+            this.setState({
+                error: true,
+                errormessage: errormessage
+            });
+        } 
+    });
+}
 
-    switch(fieldName) {
-      case 'badgeNumber':
-        badgeNumberValid = value.match(/^[0-9]{6,6}$/);
-        fieldValidationErrors.badgeNumber = badgeNumberValid ? '' : ' is 6 numbers';
-        break;
-      default:
-        break;
-    }
-    this.setState({formErrors: fieldValidationErrors,
-                    badgeNumberValid: badgeNumberValid
-                  }, this.validateForm);
-  }
+handleChange = (event) => {
+    const { name, value } = event.target;
 
-  validateForm() {
-    this.setState({formValid: this.state.badgeNumberValid});
-  }
+    this.setState({[name]: value});
+}
 
-  errorClass(error) {
-    return(error.length === 0 ? '' : 'has-error');
-  }
-
-  onKeyPress(event) {
-    if (event.which === 13 /* Enter */) {
-      event.preventDefault();
-    }
-  }
     render() {
+      const errormessage = this.state.errormessage;
+        if (this.state.error){
+            
+            alert = <div className="alert alert-info col-sm-10 offset-sm-1" role="alert">
+                Error: {errormessage}
+            </div>
+        }
       return (
-
-        <Form onKeyPress={this.onKeyPress}>
-        <FormGroup className={`form-group ${this.errorClass(this.state.formErrors.badgeNumber)}`}>
-          <Label for="badgeNumber">Badge Number</Label>
-          <Input type="text" name="badgeNumber" id="badgenumber" placeholder=""
-          value={this.state.badgeNumber}
-          onChange={this.handleUserInput}
+        <Form>
+        <div>{alert}</div>
+        <FormGroup className='form-group'>
+          <Label for="username">Username</Label>
+          <Input type="text" className="form-control" name="username" id="username" placeholder=""
+          value={this.state.username}
+          onChange={this.handleChange}
           />
         </FormGroup>
-        <div className="panel panel-default">
-          <FormErrors formErrors={this.state.formErrors} />
-        </div>
-        <Link to="/valet-homepage">
-          <Button className="btn-lg btn-primary valet-driver-submit-button"
-          disabled={!this.state.formValid}>Submit</Button>
-        </Link>
+        <FormGroup className='form-group'>
+          <Label for="password">Password</Label>
+          <Input type="password" className="form-control" name="password" id="password" placeholder=""
+          value={this.state.password}
+          onChange={this.handleChange}
+          />
+        </FormGroup>
+
+          <Button className="btn-lg btn-primary valet-login-submit-button" 
+          onClick={this.valetLogin}
+          >Submit</Button>
+
         </Form>
 
       );

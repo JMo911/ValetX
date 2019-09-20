@@ -36,8 +36,8 @@ registrationSubmit =  async (event) => {
         'username': this.state.username,
         'password': this.state.password
     }).then((response) => {
-      console.log(response);
-        // window.location = "/";
+      // console.log(response);
+        window.location = "/";
     }).catch((error) => {
         if (error.response) {
             console.log(error.response.data.info.message);
