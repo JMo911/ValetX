@@ -2,30 +2,30 @@
     width:200px;
     margin: 0 auto;
 }
-.guest-login-button.btn {
+.valet-registration-button.btn {
     display:block;
     margin: 30px auto;
 }
-.guest-login-submit-button.btn {
+.valet-registration-submit-button.btn {
     display:block;
     margin: 0 auto;
 }
 
-.guest-login-button.btn-primary,
-.guest-login-submit-button.btn-primary {
+.valet-registration-button.btn-primary,
+.valet-registration-submit-button.btn-primary {
     color: #404040;
     background-color: #f6de96;
     border:none;
 }
-.guest-login-button.btn-primary:hover,
-.guest-login-submit-button.btn-primary:hover {
+.valet-registration-button.btn-primary:hover,
+.valet-registration-submit-button.btn-primary:hover {
     color: #404040;
     background-color: #e4c670;
     border:none;
     text-decoration: none;
 }
 
-.guest-login-button.modal-dialog {
+.valet-registration-button.modal-dialog {
     max-width: 350px !important;
     position: absolute !important;
     left: 0 !important;

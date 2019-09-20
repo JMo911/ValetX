@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     const Valet = sequelize.define(
         'Valet',
         {
-            badgenumber: DataTypes.STRING,
+            username: DataTypes.STRING,
             password: DataTypes.STRING,
             email: DataTypes.STRING,
             first_name: DataTypes.STRING,
