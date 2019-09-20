@@ -1,5 +1,9 @@
-node_modules
-client/node_modules
+
+
 .env
 .idea
+.vscode
+node_modules
+client/node_modules
+
 

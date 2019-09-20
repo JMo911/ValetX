@@ -12,6 +12,9 @@ import JWTStrategy from './strategies/jwt';
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+let isValetSeeds = require("./seeders/valet-seeds");
+isValetSeeds();
+
 // Middlewares
 app.use(express.json());
 app.use(passport.initialize());
