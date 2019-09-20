@@ -9,12 +9,12 @@ module.exports = function(sequelize, DataTypes) {
             password: DataTypes.STRING,
             email: DataTypes.STRING,
             first_name: DataTypes.STRING,
-            last_name: DataTypes.STRING,
-            parked: DataTypes.BOOLEAN,
-            paid: DataTypes.BOOLEAN,
-            pick_up: DataTypes.BOOLEAN,
-            in_route: DataTypes.BOOLEAN,
-            arrived: DataTypes.BOOLEAN
+            last_name: DataTypes.STRING
+            // parked: DataTypes.BOOLEAN,
+            // paid: DataTypes.BOOLEAN,
+            // pick_up: DataTypes.BOOLEAN,
+            // in_route: DataTypes.BOOLEAN,
+            // arrived: DataTypes.BOOLEAN
         },
         {
             hooks: {

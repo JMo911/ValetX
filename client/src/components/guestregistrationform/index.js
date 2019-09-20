@@ -7,8 +7,11 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 
 
-class GuestLoginForm extends React.Component {
+class GuestRegistrationForm extends React.Component {
   state = {
+    first_name: '',
+    last_name: '',
+    email: '',
     username: '',
     password: '',
     error: false,
@@ -17,18 +20,24 @@ class GuestLoginForm extends React.Component {
 
 cookies = new Cookies();
 
-loginSubmit =  async (event) => {
+registrationSubmit =  async (event) => {
     event.preventDefault();
     this.setState({
+        "first_name": event.currentTarget.first_name,
+        "last_name": event.currentTarget.last_name, 
+        "email": event.currentTarget.email, 
         "username": event.currentTarget.username,
         "password": event.currentTarget.password
     });
-    axios.post('/api/auth', {
+    await axios.post('/api/users', {
+        'first_name': this.state.first_name,
+        'last_name': this.state.last_name,
+        'email': this.state.email,
         'username': this.state.username,
         'password': this.state.password
     }).then((response) => {
-        this.cookies.set('token', response.data.token);
-        window.location = "/dashboard";
+      console.log(response);
+        window.location = "/";
     }).catch((error) => {
         if (error.response) {
             console.log(error.response.data.info.message);
@@ -59,6 +68,27 @@ handleChange = (event) => {
         <Form>
         <div>{alert}</div>
         <FormGroup className='form-group'>
+          <Label for="first_name">First Name</Label>
+          <Input type="text" className="form-control" name="first_name" id="first_name" placeholder=""
+          value={this.state.first_name}
+          onChange={this.handleChange}
+          />
+        </FormGroup>
+        <FormGroup className='form-group'>
+          <Label for="last_name">Last Name</Label>
+          <Input type="text" className="form-control" name="last_name" id="last_name" placeholder=""
+          value={this.state.last_name}
+          onChange={this.handleChange}
+          />
+        </FormGroup>
+        <FormGroup className='form-group'>
+          <Label for="email">Email</Label>
+          <Input type="email" className="form-control" name="email" id="email" placeholder=""
+          value={this.state.email}
+          onChange={this.handleChange}
+          />
+        </FormGroup>
+        <FormGroup className='form-group'>
           <Label for="username">Username</Label>
           <Input type="text" className="form-control" name="username" id="username" placeholder=""
           value={this.state.username}
@@ -73,8 +103,8 @@ handleChange = (event) => {
           />
         </FormGroup>
 
-          <Button className="btn-lg btn-primary guest-login-submit-button" 
-          onClick={this.loginSubmit}
+          <Button className="btn-lg btn-primary guest-registration-submit-button" 
+          onClick={this.registrationSubmit}
           >Submit</Button>
 
         </Form>
@@ -83,4 +113,4 @@ handleChange = (event) => {
     }
   }
 
-export default GuestLoginForm;
+export default GuestRegistrationForm;

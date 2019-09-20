@@ -47,9 +47,6 @@ export default function (app) {
            email: body.email,
            first_name: body.first_name,
            last_name: body.last_name
-       }).then((result) => {
-           response.end();
-       })
-
+       }).then(() => {response.end();})
     });
 }
