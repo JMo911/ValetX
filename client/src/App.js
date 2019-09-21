@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import jwt from 'jsonwebtoken';
+// import dotEnv from 'dotenv';
+// dotEnv.config();
 import "./App.css";
 import LoginForm from './components/LoginForm';
 import LoginPage from "../src/components/login-page";
@@ -17,11 +20,32 @@ import ArrivedView from "../src/components/arrived-view";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
+  isAuthenticated= async() =>{
+    let cookie = document.cookie;
+    cookie = cookie.split(', ');
+    var result = {};
+    for (var i = 0; i < cookie.length; i++) {
+        var cur = cookie[i].split('=');
+        result[cur[0]] = cur[1];
+    }
+    let token = result.token;
+    try {
+      const verified = await jwt.verify(token, 'mysecret')
+      if (await verified) {
+        console.log(true);
+      } 
+    }
+    catch {
+      console.log(" outside false");
+    }
+
+    
+  }
 
   render() {
-    // function isAuthenticated() {
+    this.isAuthenticated();
+    
 
-    // }
     return (
         <div className="container">
           {/* <LoginForm loginSubmit={() => { this.loginUser() }}/> */}
