@@ -12,16 +12,4 @@ export default function (app) {
        }).then(() => {response.end();})
        .catch(err => console.log(err.errors[0].message))
     });
-
-    app.post('/api/valets', (request, response) => {
-        const body = request.body;
-        models.Valet.create({
-           username: body.username,
-           password: body.password,
-           email: body.email,
-           first_name: body.first_name,
-           last_name: body.last_name
-       }).then(() => {response.end();})
-       .catch(err => err.errors[0].message)
-    });
 }

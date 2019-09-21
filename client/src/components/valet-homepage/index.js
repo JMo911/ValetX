@@ -8,7 +8,7 @@ import ValetHomeForm from "../valet-home-form";
 
 class ValetHomePage extends Component {  
   render() {
-    console.log("THIS IS YOUR COOKIE:" + document.cookie);
+    // console.log("THIS IS YOUR COOKIE:" + document.cookie);
     return (
       <LoginCard>
         <Link to="/">

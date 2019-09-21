@@ -36,6 +36,9 @@ authRoutes(app);
 import registrationRoutes from './routes/registration';
 registrationRoutes(app);
 
+import carRoutes from './routes/registration';
+carRoutes(app);
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

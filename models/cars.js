@@ -6,8 +6,8 @@ module.exports = function(sequelize, DataTypes) {
         'Car',
         {
             licenseplate: DataTypes.STRING,
-            make: DataTypes.STRING,
-            model: DataTypes.STRING,
+            spot: DataTypes.STRING,
+            make_model: DataTypes.STRING,
             color: DataTypes.STRING,
             parked: DataTypes.BOOLEAN,
             paid: DataTypes.BOOLEAN,

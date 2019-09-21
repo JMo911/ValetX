@@ -19,6 +19,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 class App extends Component {
 
   render() {
+    // function isAuthenticated() {
+
+    // }
     return (
         <div className="container">
           {/* <LoginForm loginSubmit={() => { this.loginUser() }}/> */}
