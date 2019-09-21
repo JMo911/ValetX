@@ -29,14 +29,15 @@ registrationSubmit =  async (event) => {
         "username": event.currentTarget.username,
         "password": event.currentTarget.password
     });
-    await axios.post('/api/valets', {
+    await axios.post('/api/users', {
         'first_name': this.state.first_name,
         'last_name': this.state.last_name,
         'email': this.state.email,
         'username': this.state.username,
-        'password': this.state.password
+        'password': this.state.password,
+        'valet': true
     }).then((response) => {
-      // console.log(response);
+      console.log(response);
         window.location = "/";
     }).catch((error) => {
         if (error.response) {

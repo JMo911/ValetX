@@ -21,12 +21,24 @@ valetLogin =  async (event) => {
         "username": event.currentTarget.username,
         "password": event.currentTarget.password
     });
-    axios.post('/api/valetauth', {
+    axios.post('/api/auth', {
         'username': this.state.username,
         'password': this.state.password
     }).then((response) => {
+      const isValet = response.data.user.valet;
+        if(!isValet) {
+          this.setState({
+            error: true,
+            errormessage: "Please visit the guest login page"
+          });
+          function reroutetoguestlogin() {
+            window.location = "/"
+          }
+          setTimeout(reroutetoguestlogin, 3000);
+        } else{
         this.cookies.set('token', response.data.token);
-        window.location = "/dashboard";
+        window.location = "/valet-homepage";
+        }
     }).catch((error) => {
         if (error.response) {
             console.log(error.response.data.info.message);

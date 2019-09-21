@@ -6,8 +6,9 @@ import ViewLogin from "../view-login";
 import { Link } from "react-router-dom";
 import ValetHomeForm from "../valet-home-form";
 
-class ValetHomePage extends Component {
+class ValetHomePage extends Component {  
   render() {
+    console.log("THIS IS YOUR COOKIE:" + document.cookie);
     return (
       <LoginCard>
         <Link to="/">

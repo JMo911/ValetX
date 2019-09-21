@@ -1,6 +1,6 @@
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
-import models from '../models';
+// import user from '../models/user';
 export default function (app) {
      app.post('/api/auth', function(request, response) {
         passport.authenticate(
@@ -23,7 +23,8 @@ export default function (app) {
                     var sanitizedUser = {
                         id: user.id,
                         username: user.username,
-                        email: user.email
+                        email: user.email,
+                        valet: user.valet
                     };
 
                     // generate a signed son web token with the contents of user object and return it in the response

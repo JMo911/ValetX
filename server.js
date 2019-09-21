@@ -33,9 +33,6 @@ passport.use(JWTStrategy);
 import authRoutes from './routes/auth';
 authRoutes(app);
 
-import valetAuthRoute from './routes/valetauth';
-valetAuthRoute(app);
-
 import registrationRoutes from './routes/registration';
 registrationRoutes(app);
 

@@ -27,8 +27,20 @@ loginSubmit =  async (event) => {
         'username': this.state.username,
         'password': this.state.password
     }).then((response) => {
-        this.cookies.set('token', response.data.token);
-        window.location = "/dashboard";
+        const isValet = response.data.user.valet;
+        if (isValet) {
+          this.setState({
+            error: true,
+            errormessage: "Please visit the valet login page"
+          });
+          function reroutetovaletlogin() {
+            window.location = "/"
+          }
+          setTimeout(reroutetovaletlogin, 3000);
+        } else {
+          this.cookies.set('token', response.data.token);
+          window.location = "/dashboard";
+        }
     }).catch((error) => {
         if (error.response) {
             console.log(error.response.data.info.message);

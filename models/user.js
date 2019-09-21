@@ -5,11 +5,19 @@ module.exports = function(sequelize, DataTypes) {
     const User = sequelize.define(
         'User',
         {
-            username: DataTypes.STRING,
+            username: {
+                type: DataTypes.STRING,
+                unique: true
+            },
             password: DataTypes.STRING,
             email: DataTypes.STRING,
             first_name: DataTypes.STRING,
-            last_name: DataTypes.STRING
+            last_name: DataTypes.STRING,
+            valet: {
+                type: DataTypes.BOOLEAN
+                // defaultValue: false,
+                // allowNull: false
+              }
             // parked: DataTypes.BOOLEAN,
             // paid: DataTypes.BOOLEAN,
             // pick_up: DataTypes.BOOLEAN,

@@ -34,7 +34,8 @@ registrationSubmit =  async (event) => {
         'last_name': this.state.last_name,
         'email': this.state.email,
         'username': this.state.username,
-        'password': this.state.password
+        'password': this.state.password,
+        'valet': false
     }).then((response) => {
       console.log(response);
         window.location = "/";
