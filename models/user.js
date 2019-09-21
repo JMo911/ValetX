@@ -7,7 +7,10 @@ module.exports = function(sequelize, DataTypes) {
         {
             username: {
                 type: DataTypes.STRING,
-                unique: true
+                unique: {
+                    args: true,
+                    msg: "Please try a different username."
+                }
             },
             password: DataTypes.STRING,
             email: DataTypes.STRING,

@@ -10,6 +10,7 @@ export default function (app) {
            first_name: body.first_name,
            last_name: body.last_name
        }).then(() => {response.end();})
+       .catch(err => console.log(err.errors[0].message))
     });
 
     app.post('/api/valets', (request, response) => {
@@ -21,5 +22,6 @@ export default function (app) {
            first_name: body.first_name,
            last_name: body.last_name
        }).then(() => {response.end();})
+       .catch(err => err.errors[0].message)
     });
 }

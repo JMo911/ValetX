@@ -23,7 +23,7 @@ class GuestRegistrationButton extends React.Component {
             <div className="center-buttons guest-registration-button-modal">
                 <Button className="btn-lg btn-primary guest-registration-button" onClick={this.toggle}>New Guest?</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                <ModalHeader toggle={this.toggle}>Create Account</ModalHeader>
+                <ModalHeader toggle={this.toggle}>Create Guest Account</ModalHeader>
                 <ModalBody>
                 {this.props.children}
                 </ModalBody>

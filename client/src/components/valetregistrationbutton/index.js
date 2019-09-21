@@ -23,7 +23,7 @@ class ValetRegistrationButton extends React.Component {
             <div className="center-buttons valet-registration-button-modal">
                 <Button className="btn-lg btn-primary valet-registration-button" onClick={this.toggle}>New Valet?</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                <ModalHeader toggle={this.toggle}>Create Account</ModalHeader>
+                <ModalHeader toggle={this.toggle}>Create Valet Account</ModalHeader>
                 <ModalBody>
                 {this.props.children}
                 </ModalBody>

@@ -37,11 +37,9 @@ registrationSubmit =  async (event) => {
         'password': this.state.password,
         'valet': false
     }).then((response) => {
-      console.log(response);
         window.location = "/";
     }).catch((error) => {
         if (error.response) {
-            console.log(error.response.data.info.message);
             const errormessage = error.response.data.info.message;
             this.setState({
                 error: true,
