@@ -17,9 +17,19 @@ import GuestQueue from "./components/valet-guest-queue";
 import ValetArrived from "./components/valet-arrived";
 import Checkout from "./components/checkout";
 import ArrivedView from "../src/components/arrived-view";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {isAuthenticated: false};
+  }
+
+  componentWillMount () {
+    this.isAuthenticated();
+  }
+
+
   isAuthenticated= async() =>{
     let cookie = document.cookie;
     cookie = cookie.split(', ');
@@ -30,21 +40,25 @@ class App extends Component {
     }
     let token = result.token;
     try {
-      const verified = await jwt.verify(token, 'mysecret')
+      const verified = await jwt.verify(token, 'jMoNeYy$$')
       if (await verified) {
-        console.log(true);
+        this.setState({
+          isAuthenticated: true
+        })
       } 
     }
     catch {
-      console.log(" outside false");
+      this.setState({
+        isAuthenticated: false
+      })
     }
 
     
   }
 
   render() {
-    this.isAuthenticated();
-    
+    // this.isAuthenticated();
+    // console.log(this.state.isAuthenticated)
 
     return (
         <div className="container">
@@ -55,7 +69,17 @@ class App extends Component {
             <Route path='/register' 
             exact component={UserRegistrationForm}></Route>
             <Route path='/login' exact component={LoginForm}></Route>
-            <Route path='/dashboard' exact component={DashboardPage}></Route>
+
+            { this.state.isAuthenticated ? 
+              <Route path='/dashboard' exact component={DashboardPage}></Route> :
+              window.location('/')
+            }
+            
+
+
+
+
+
             <Route path='/dashboard-paid' exact component={DashboardPaidPage}></Route>
             <Route path='/dashboard-parked' exact component={DashboardParkedPage}></Route>
             <Route path='/dashboard-pickup' exact component={DashboardPickUpPage}></Route>
