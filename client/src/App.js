@@ -17,12 +17,12 @@ import GuestQueue from "./components/valet-guest-queue";
 import ValetArrived from "./components/valet-arrived";
 import Checkout from "./components/checkout";
 import ArrivedView from "../src/components/arrived-view";
-import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, withRouter, Redirect } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {isAuthenticated: false};
+    this.state = {isAuthenticated: null};
   }
 
   componentWillMount () {
@@ -52,13 +52,25 @@ class App extends Component {
         isAuthenticated: false
       })
     }
-
+    // console.log(this.state.isAuthenticated)
     
   }
 
   render() {
     // this.isAuthenticated();
     // console.log(this.state.isAuthenticated)
+    const routeauthentication = () =>{
+      if (this.state.isAuthenticated === true) {
+        return <Route path='/dashboard' exact component={DashboardPage}></Route>
+      } else if (this.state.isAuthenticated === false) {
+        return <Redirect to='/'></Redirect>
+      } else {
+        //null case
+        return <div>"Loading"</div>
+      }
+      
+    }
+    
 
     return (
         <div className="container">
@@ -70,9 +82,8 @@ class App extends Component {
             exact component={UserRegistrationForm}></Route>
             <Route path='/login' exact component={LoginForm}></Route>
 
-            { this.state.isAuthenticated ? 
-              <Route path='/dashboard' exact component={DashboardPage}></Route> :
-              window.location('/')
+            { routeauthentication()
+              // <LoginPage></LoginPage>
             }
             
 
