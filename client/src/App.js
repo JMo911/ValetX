@@ -40,7 +40,7 @@ class App extends Component {
     }
     let token = result.token;
     try {
-      const verified = await jwt.verify(token, 'jMoNeYy$$')
+      const verified = await jwt.verify(token, 'yourJWTsecret')
       if (await verified) {
         this.setState({
           isAuthenticated: true
@@ -61,9 +61,30 @@ class App extends Component {
     // console.log(this.state.isAuthenticated)
     const routeauthentication = () =>{
       if (this.state.isAuthenticated === true) {
-        return <Route path='/dashboard' exact component={DashboardPage}></Route>
+        return (
+                <Router>
+                <Route path='/dashboard' exact component={DashboardPage}></Route>
+                <Route path='/register' exact component={UserRegistrationForm}></Route>
+                <Route path='/login' exact component={LoginForm}></Route>
+                <Route path='/dashboard-paid' exact component={DashboardPaidPage}></Route>
+                <Route path='/dashboard-parked' exact component={DashboardParkedPage}></Route>
+                <Route path='/dashboard-pickup' exact component={DashboardPickUpPage}></Route>
+                <Route path='/dashboard-inroute' exact component={DashboardInRoutePage}></Route>
+                <Route path='/arrived-view' exact component={ArrivedView}></Route>
+                <Route path='/valet-homepage' exact component={ValetHomePage}></Route>
+                <Route path='/valet-park' exact component={ValetPark}></Route>
+                <Route path='/valet-guest-queue' exact component={GuestQueue}></Route>
+                <Route path='/valet-arrived' exact component={ValetArrived}></Route>
+                <Route path='/checkout' exact component={Checkout}></Route>
+                </Router>
+        )
       } else if (this.state.isAuthenticated === false) {
-        return <Redirect to='/'></Redirect>
+        return (
+        <Router>
+          <Route path='/' exact component={LoginPage}></Route>
+          <Redirect to='/'></Redirect>
+        </Router>  
+        )
       } else {
         //null case
         return <div>"Loading"</div>
@@ -76,11 +97,11 @@ class App extends Component {
         <div className="container">
           {/* <LoginForm loginSubmit={() => { this.loginUser() }}/> */}
           {/* <UserRegistrationForm registrationSubmit={() => { this.registerUser() }}/> */}
-          <Router>
+          {/* <Router>
             <Route path='/' exact component={LoginPage}></Route>
             <Route path='/register' 
             exact component={UserRegistrationForm}></Route>
-            <Route path='/login' exact component={LoginForm}></Route>
+            <Route path='/login' exact component={LoginForm}></Route> */}
 
             { routeauthentication()
               // <LoginPage></LoginPage>
@@ -91,7 +112,7 @@ class App extends Component {
 
 
 
-            <Route path='/dashboard-paid' exact component={DashboardPaidPage}></Route>
+            {/* <Route path='/dashboard-paid' exact component={DashboardPaidPage}></Route>
             <Route path='/dashboard-parked' exact component={DashboardParkedPage}></Route>
             <Route path='/dashboard-pickup' exact component={DashboardPickUpPage}></Route>
             <Route path='/dashboard-inroute' exact component={DashboardInRoutePage}></Route>
@@ -101,7 +122,7 @@ class App extends Component {
             <Route path='/valet-guest-queue' exact component={GuestQueue}></Route>
             <Route path='/valet-arrived' exact component={ValetArrived}></Route>
             <Route path='/checkout' exact component={Checkout}></Route>
-          </Router>
+          </Router> */}
          </div>
     );
   }
