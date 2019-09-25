@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import jwt from 'jsonwebtoken';
-// import dotEnv from 'dotenv';
-// dotEnv.config();
 import "./App.css";
 import LoginForm from './components/LoginForm';
 import LoginPage from "../src/components/login-page";
@@ -18,6 +16,9 @@ import ValetArrived from "./components/valet-arrived";
 import Checkout from "./components/checkout";
 import ArrivedView from "../src/components/arrived-view";
 import { BrowserRouter as Router, Route, withRouter, Redirect } from "react-router-dom";
+//dotenv has to be the last import because it makes eslint error otherwise
+import dotEnv from 'dotenv';
+dotEnv.config();
 
 class App extends Component {
   constructor(props) {
@@ -40,7 +41,8 @@ class App extends Component {
     }
     let token = result.token;
     try {
-      const verified = await jwt.verify(token, 'yourJWTsecret')
+      const verified = await jwt.verify(token, process.env.REACT_APP_JWTSECRET)
+      
       if (await verified) {
         this.setState({
           isAuthenticated: true
@@ -57,8 +59,6 @@ class App extends Component {
   }
 
   render() {
-    // this.isAuthenticated();
-    // console.log(this.state.isAuthenticated)
     const routeauthentication = () =>{
       if (this.state.isAuthenticated === true) {
         return (

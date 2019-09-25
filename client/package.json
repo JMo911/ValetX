@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.0.1",
@@ -11,7 +12,8 @@
     "react-stripe-checkout": "^2.6.3",
     "react-stripe-elements": "^5.0.1",
     "react-timeout": "^1.2.0",
-    "reactstrap": "^8.0.1"
+    "reactstrap": "^8.0.1",
+    "superagent": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

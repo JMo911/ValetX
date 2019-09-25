@@ -25,6 +25,7 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.1.0",
+    "env-cmd": "^10.0.1",
     "esm": "^3.2.25",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
