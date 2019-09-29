@@ -19,6 +19,6 @@
 
 ### Company Benefits
 * Thousands saved - No longer have to purchase tickets to track guests using your valet service.
-⋅⋅* Less staff needed - No need for a cashier to take guest payments.
+    * Less staff needed - No need for a cashier to take guest payments.
 * Happy guests - Easier, faster, and more informative valet system.  
 * Happy valets - Easier system that includes private tip prompt to guests. No need for awkward non-tipping situations. 
